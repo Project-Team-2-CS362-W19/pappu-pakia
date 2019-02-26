@@ -1,0 +1,23 @@
+{
+  "name": "pappu-pakia",
+  "version": "1.0.0",
+  "description": "A flying bird game",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^24.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Project-Team-2-CS362-W19/pappu-pakia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Project-Team-2-CS362-W19/pappu-pakia/issues"
+  },
+  "homepage": "https://github.com/Project-Team-2-CS362-W19/pappu-pakia#readme"
+}
