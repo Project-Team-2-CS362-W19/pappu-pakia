@@ -29,29 +29,29 @@
   ];
 
   var images = {
-    angry_pakia : "img/angry_pakia.png",
-    backtrees : "img/back_trees.png",
-    berries : "img/berries.png",
-    bg_combined: "img/bg_combined.png",
-    branch : "img/branch.png",
-    clouds : "img/clouds.png",
-    coins : "img/coins.png",
-    controls : "img/controls.png",
-    //dig : "img/dig.png",
-    fork_handle : "img/fork_handle.png",
-    fork_head : "img/fork_head.png",
-    fronttrees : "img/front_trees.png",
-    grass : "img/grass.png",
-    ground : "img/ground.png",
-    happy_pakia : "img/happy_pakia.png",
-    log : "img/log.png",
-    pappu : "img/pappu.png",
-    plank_bot : "img/plank_bot.png",
-    plank_mid : "img/plank_mid.png",
-    plank_top : "img/plank_top.png",
-    sad_pakia : "img/sad_pakia.png",
-    stand : "img/stand.png",
-    star : "img/star.png"
+    angry_pakia : "../../../img/angry_pakia.png",
+    backtrees : "../../../img/back_trees.png",
+    berries : "../../../img/berries.png",
+    bg_combined: "../../../img/bg_combined.png",
+    branch : "../../../img/branch.png",
+    clouds : "../../../img/clouds.png",
+    coins : "../../../img/coins.png",
+    controls : "../../../img/controls.png",
+    //dig : "../../../img/dig.png",
+    fork_handle : "../../../img/fork_handle.png",
+    fork_head : "../../../img/fork_head.png",
+    fronttrees : "../../../img/front_trees.png",
+    grass : "../../../img/grass.png",
+    ground : "../../../img/ground.png",
+    happy_pakia : "../../../img/happy_pakia.png",
+    log : "../../../img/log.png",
+    pappu : "../../../img/pappu.png",
+    plank_bot : "../../../img/plank_bot.png",
+    plank_mid : "../../../img/plank_mid.png",
+    plank_top : "../../../img/plank_top.png",
+    sad_pakia : "../../../img/sad_pakia.png",
+    stand : "../../../img/stand.png",
+    star : "../../../img/star.png"
   };
 
   mit.image = {};
@@ -67,7 +67,7 @@
   var loader = document.getElementById("loading");
   var loadText = document.getElementById("loadText");
 
-  if(!($.browser.webkit && !$.browser.chrome)) {
+  /*if(!($.browser.webkit && !$.browser.chrome)) {
     for(var i = 0; i < mit.audio.length; i++) {
       var file = mit.audio[i];
 
@@ -119,6 +119,6 @@
     };
 
     mit.image[src].src = images[src];
-  }
+  }*/
 
 }());

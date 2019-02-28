@@ -6,7 +6,9 @@
   "dependencies": {
     "jest": "^24.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jsdom": "^13.2.0"
+  },
   "scripts": {
     "test": "jest"
   },
