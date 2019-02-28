@@ -67,7 +67,7 @@
   var loader = document.getElementById("loading");
   var loadText = document.getElementById("loadText");
 
-  /*if(!($.browser.webkit && !$.browser.chrome)) {
+  if(!($.browser.webkit && !$.browser.chrome)) {
     for(var i = 0; i < mit.audio.length; i++) {
       var file = mit.audio[i];
 
@@ -119,6 +119,6 @@
     };
 
     mit.image[src].src = images[src];
-  }*/
+  }
 
 }());
