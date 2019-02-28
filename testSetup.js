@@ -24,6 +24,8 @@ dom.window.eval(pappu.toString());
 dom.window.eval(pakia.toString());
 dom.window.eval(main.toString());
 //dom.window.eval(loader.toString()); // not included due to error contacting the non-existent server
-mit = dom.window.mit;
 
-module.exports = mit;
+module.exports = {
+  mit: dom.window.mit, 
+  utils: dom.window.utils
+};

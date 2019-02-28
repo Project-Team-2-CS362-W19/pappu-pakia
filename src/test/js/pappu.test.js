@@ -1,4 +1,4 @@
-mit = require("../../../testSetup");
+mit = require("../../../testSetup").mit;
 
 test('updateFlyFrameCountTest', () => {
   mit.Pappu.updateFlyFrameCount();
