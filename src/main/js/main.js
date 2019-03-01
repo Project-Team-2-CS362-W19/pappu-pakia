@@ -51,7 +51,7 @@ mit.main = function() {
 
   var canvas = document.querySelector('#game_main');
   var ctx = canvas.getContext('2d');
-
+  
   var W = canvas.width = ui.body.width();
   var H = canvas.height = ui.body.height();
 
