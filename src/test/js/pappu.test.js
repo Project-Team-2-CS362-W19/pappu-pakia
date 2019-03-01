@@ -53,8 +53,41 @@ test('getBoundsTest', () => {
 test('createClonesTest', () => {
   mit.Pappu.createClones(3);
   expect(mit.Pappu.clones.length).toBe(3);
+  expect(mit.Pappu.clones[0].x).toBe(mit.Pappu.x);
+  expect(mit.Pappu.clones[0].y).toBe(mit.Pappu.y);
+  expect(mit.Pappu.clones[0].w).toBe(mit.Pappu.w);
+  expect(mit.Pappu.clones[0].h).toBe(mit.Pappu.h);
 });
 
-//test('checkCloneCollisionTest', () => {
-//  
-//});
+test('checkCloneCollisionTest', () => {
+  mit.Pappu.init();
+  mit.Pappu.h = 60;
+  mit.Pappu.w = 60;
+  mit.Pappu.createClones(2);
+
+  mit.BranchUtils.init();
+  mit.BranchUtils.create();
+  mit.BranchUtils.branches = [mit.BranchUtils.branches[0]];
+  mit.BranchUtils.branches[0].x = 500;
+  mit.BranchUtils.branches[0].h = 500;
+  mit.BranchUtils.branches[0].w = 31;
+
+  mit.ForkUtils.init();
+  mit.ForkUtils.create();
+  mit.ForkUtils.forks = [mit.ForkUtils.forks[0]];
+  mit.ForkUtils.forks[0].x = 750;
+  mit.ForkUtils.forks[0].w = 22;
+
+  mit.Pappu.clones[0].x = mit.BranchUtils.branches[0].x - 1;
+  mit.Pappu.clones[0].y = mit.BranchUtils.branches[0].y - 1;
+  mit.Pappu.clones[1].x = mit.ForkUtils.forks[0].x - 1;
+  mit.Pappu.clones[1].y = mit.ForkUtils.forks[0].y - 1;
+
+  expect(mit.BranchUtils.branches[0]).toBeTruthy();
+  expect(mit.ForkUtils.forks[0]).toBeTruthy();
+
+  mit.Pappu.checkCloneCollision();
+
+  expect(mit.BranchUtils.branches[0]).toBeFalsy();
+  expect(mit.ForkUtils.forks[0]).toBeFalsy();
+});
