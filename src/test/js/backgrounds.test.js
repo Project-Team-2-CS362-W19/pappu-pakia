@@ -1,6 +1,4 @@
-env = require("../../../testSetup");
-mit = env.mit;
-doc = env.doc;
+var mit = require("../../../testSetup").mit;
 
 
 test('resetAllSpeed', () => {

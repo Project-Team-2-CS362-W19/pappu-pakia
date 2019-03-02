@@ -1,6 +1,25 @@
-env = require("../../../testSetup");
-mit = env.mit;
-doc = env.doc;
+var mit = require("../../../testSetup").mit;
+var doc = require("../../../testSetup").doc;
+
+test('getBounds', () => {
+  var collectible = new mit.Collectible();
+  collectible.x = 10;
+  collectible.y = 11;
+  collectible.w = 12;
+  collectible.h = 13;
+  var b = collectible.getBounds();
+  expect(b.start_x).toBe(10);
+  expect(b.start_y).toBe(11);
+  expect(b.end_x).toBe(22);
+  expect(b.end_y).toBe(24);
+});
+
+test('sound', () => {
+  var collectible = new mit.Collectible();
+  expect(collectible.sound).toEqual(doc.getElementById("ting"));
+  expect(collectible.sound.volume).toBe(0.35);
+
+});
 
 test('CollectibleUtils_init', () => {
   expect(mit.CollectibleUtils.count).toBe(2);
