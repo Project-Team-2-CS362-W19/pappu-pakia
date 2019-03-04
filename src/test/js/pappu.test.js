@@ -1,6 +1,6 @@
-env = require("../../../testSetup");
-mit = env.mit;
-doc = env.doc;
+var env = require("../../../testSetup");
+var mit = env.mit;
+var doc = env.doc;
 
 test('initTest', () => {
   mit.Pappu.init();

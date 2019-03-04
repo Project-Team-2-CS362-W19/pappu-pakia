@@ -1,4 +1,4 @@
-utils = require("../../../testSetup").utils;
+const utils = require("../../../testSetup").utils;
 
 test('randomNumberTest', () => {
   var result;
