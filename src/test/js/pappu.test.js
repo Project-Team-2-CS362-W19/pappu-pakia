@@ -1,3 +1,10 @@
+// Code that uses mit.ui or ANYTHING else initialized
+// by main() is difficult because it requires ctx which is graphic
+// but jest is non-graphical. I left the tests in, but commented them out
+// in case we figure out how to mock the visual aspect of the game.
+// Until such a time, please ignore all the other comments in this file
+
+
 var env = require("../../../testSetup");
 var mit = env.mit;
 var doc = env.doc;
@@ -13,9 +20,6 @@ test('initTest', () => {
   expect(mit.Pappu.x).toBe(33);
 });
 
-// Code that uses mit.ui or ANYTHING else initialized
-// by main() is difficult because it requires ctx which is graphic
-// but jest is non-graphical
 /*test('undoInvincibleTest', () => {
   mit.Pappu.undoInvincible();
   expect(mit.Pappu.invincible).toBe(0);
@@ -31,7 +35,6 @@ test('updateFlyFrameCountTest', () => {
   expect(mit.Pappu.fly_frame_count).toBe(0);
 });
 
-// Note that ANYTHING includes mit.H and mit.W
 /*test('hasReachedBoundaryTest', () => {
   expect(mit.Pappu.hasReachedBoundary()).toBe(false);
   mit.Pappu.y = 0 - mit.Pappu.h - 10;
@@ -53,17 +56,19 @@ test('getBoundsTest', () => {
 test('createClonesTest', () => {
   mit.Pappu.createClones(3);
   expect(mit.Pappu.clones.length).toBe(3);
-  expect(mit.Pappu.clones[0].x).toBe(mit.Pappu.x);
-  expect(mit.Pappu.clones[0].y).toBe(mit.Pappu.y);
-  expect(mit.Pappu.clones[0].w).toBe(mit.Pappu.w);
-  expect(mit.Pappu.clones[0].h).toBe(mit.Pappu.h);
+  for (let i = 0; i < 3; i++) {  
+    expect(mit.Pappu.clones[0].x).toBe(mit.Pappu.x);
+    expect(mit.Pappu.clones[0].y).toBe(mit.Pappu.y);
+    expect(mit.Pappu.clones[0].w).toBe(mit.Pappu.w);
+    expect(mit.Pappu.clones[0].h).toBe(mit.Pappu.h);
+  }
 });
 
 test('checkCloneCollisionTest', () => {
   mit.Pappu.init();
   mit.Pappu.h = 60;
   mit.Pappu.w = 60;
-  mit.Pappu.createClones(2);
+  mit.Pappu.createClones(3);
 
   mit.BranchUtils.init();
   mit.BranchUtils.create();
@@ -75,19 +80,31 @@ test('checkCloneCollisionTest', () => {
   mit.ForkUtils.init();
   mit.ForkUtils.create();
   mit.ForkUtils.forks = [mit.ForkUtils.forks[0]];
-  mit.ForkUtils.forks[0].x = 750;
+  mit.ForkUtils.forks[0].x = 650;
   mit.ForkUtils.forks[0].w = 22;
+
+  /*mit.PakiaUtils.init();
+  mit.PakiaUtils.createPakias();
+  mit.PakiaUtils.pakias = [mit.PakiaUtils.pakias[0]];
+  mit.PakiaUtils.pakias[0].x = 800;
+  mit.PakiaUtils.pakias[0].y = 50;
+  mit.PakiaUtils.pakias[0].w = 52;
+  mit.PakiaUtils.pakias[0].h = 51;*/
 
   mit.Pappu.clones[0].x = mit.BranchUtils.branches[0].x - 1;
   mit.Pappu.clones[0].y = mit.BranchUtils.branches[0].y - 1;
   mit.Pappu.clones[1].x = mit.ForkUtils.forks[0].x - 1;
   mit.Pappu.clones[1].y = mit.ForkUtils.forks[0].y - 1;
+  //mit.Pappu.clones[2].x = mit.PakiaUtils.pakias[0].x - 1;
+  //mit.Pappu.clones[2].y = mit.PakiaUtils.pakias[0].y - 1;
 
   expect(mit.BranchUtils.branches[0]).toBeTruthy();
   expect(mit.ForkUtils.forks[0]).toBeTruthy();
+  //expect(mit.PakiaUtils.pakias[0]).toBeTruthy();
 
   mit.Pappu.checkCloneCollision();
 
   expect(mit.BranchUtils.branches[0]).toBeFalsy();
   expect(mit.ForkUtils.forks[0]).toBeFalsy();
+  //expect(mit.PakiaUtils.pakias[0]).toBeFalsy();
 });
