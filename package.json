@@ -11,8 +11,7 @@
     "jsdom": "^13.2.0"
   },
   "scripts": {
-    "test": "jest",
-    "coverage": "jest --coverage"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

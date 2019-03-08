@@ -1,5 +1,6 @@
-var mit = require("../../../testSetup").mit;
-var doc = require("../../../testSetup").doc;
+var env = require("../../../testSetup");
+var mit = env.mit;
+var doc = env.doc;
 
 test('getBounds', () => {
   var collectible = new mit.Collectible();
