@@ -11,7 +11,7 @@
 
   // Preloading audio stuff
   var loadMusic = document.getElementById("start"),
-      loadAngry = document.getElementById("angry_jump"), 
+      loadAngry = document.getElementById("angry_jump"),
       loadSad = document.getElementById("sad_jump"),
       loadHappy = document.getElementById("happy_jump"),
       loadFlap = document.getElementById("flap"),
@@ -20,38 +20,38 @@
   // Preloading image stuff
 
   mit.audio = [
-    loadMusic, 
-    loadAngry, 
-    loadSad, 
+    loadMusic,
+    loadAngry,
+    loadSad,
     loadHappy,
-    loadFlap, 
+    loadFlap,
     loadTing,
   ];
 
   var images = {
-    angry_pakia : "img/angry_pakia.png",
-    backtrees : "img/back_trees.png",
-    berries : "img/berries.png",
-    bg_combined: "img/bg_combined.png",
-    branch : "img/branch.png",
-    clouds : "img/clouds.png",
-    coins : "img/coins.png",
-    controls : "img/controls.png",
-    //dig : "img/dig.png",
-    fork_handle : "img/fork_handle.png",
-    fork_head : "img/fork_head.png",
-    fronttrees : "img/front_trees.png",
-    grass : "img/grass.png",
-    ground : "img/ground.png",
-    happy_pakia : "img/happy_pakia.png",
-    log : "img/log.png",
-    pappu : "img/pappu.png",
-    plank_bot : "img/plank_bot.png",
-    plank_mid : "img/plank_mid.png",
-    plank_top : "img/plank_top.png",
-    sad_pakia : "img/sad_pakia.png",
-    stand : "img/stand.png",
-    star : "img/star.png"
+    angry_pakia : "./img/angry_pakia.png",
+    backtrees : "./img/back_trees.png",
+    berries : "./img/berries.png",
+    bg_combined: "./img/bg_combined.png",
+    branch : "./img/branch.png",
+    clouds : "./img/clouds.png",
+    coins : "./img/coins.png",
+    controls : "./img/controls.png",
+    //dig : "./img/dig.png",
+    fork_handle : "./img/fork_handle.png",
+    fork_head : "./img/fork_head.png",
+    fronttrees : "./img/front_trees.png",
+    grass : "./img/grass.png",
+    ground : "./img/ground.png",
+    happy_pakia : "./img/happy_pakia.png",
+    log : "./img/log.png",
+    pappu : "./img/pappu.png",
+    plank_bot : "./img/plank_bot.png",
+    plank_mid : "./img/plank_mid.png",
+    plank_top : "./img/plank_top.png",
+    sad_pakia : "./img/sad_pakia.png",
+    stand : "./img/stand.png",
+    star : "./img/star.png"
   };
 
   mit.image = {};
@@ -71,7 +71,7 @@
     for(var i = 0; i < mit.audio.length; i++) {
       var file = mit.audio[i];
 
-      if (isNaN(file.duration)) { 
+      if (isNaN(file.duration)) {
         file.addEventListener("loadeddata", function() {
           counter++;
           percent = Math.floor((counter/size*100));
@@ -110,7 +110,7 @@
       percent = Math.floor(((counter)/size*100));
       loading.style.width = percent + "%";
       loadText.innerHTML = "Loading... " + percent + "%";
-      
+
       if(percent >= 100) {
         $("#loading").fadeOut();
         mit.main();
