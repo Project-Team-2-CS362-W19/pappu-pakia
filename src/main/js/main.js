@@ -95,10 +95,13 @@ mit.main = function() {
 
   //Resize ui when window resizes
   mit.ui.resizeCanvas = function() {
-    canvas.width = ui.body.width();
-    if (canvas.width > 1000) canvas.width = 1000;
+    canvas.height = ui.body.height();
+    if (canvas.height > 500) canvas.height = 500;
+    if (canvas.height < 300) canvas.height = 300;
+    canvas.width = canvas.height * 2;
+    if (canvas.width > ui.body.width()) canvas.width = ui.body.width();
     if (canvas.width < 600) canvas.width = 600;
-    canvas.height = canvas.width / 2;
+    canvas.height = canvas.width * 1/2;
     ctx.scale(canvas.width/1000, canvas.height/500);
 
     bg_canvas.width = canvas.width;
