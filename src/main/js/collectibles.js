@@ -10,7 +10,7 @@
 
   - One for pappu's invincibility
   */
-  
+
   mit.Collectible = function() {
 
     // x/y pos
@@ -105,7 +105,7 @@
     //types: ['invincible'],
 
     sub_types: {
-      coin: [50, 100, 500]
+      coin: [50, 100, 500, 1000]
     },
 
     init: function() {
@@ -188,6 +188,7 @@
       var collec,
           sub_types,
           pos;
+      var choice;
 
       for (var i = 0; i < count; i++) {
         collec = new mit.Collectible();
@@ -206,8 +207,25 @@
         // Choosing Sub types if any
         sub_types = this.sub_types[collec.type];
         if (sub_types)
-          collec.sub_type = sub_types[utils.randomNumber(0, sub_types.length-1)];
-
+        {
+          choice = utils.randomNumber(0, 10);
+          if (choice == 10)
+          {
+            collec.sub_type = 1000;
+          }
+          else if (choice >= 8)
+          {
+            collec.sub_type = 500;
+          }
+          else if (choice >= 5)
+          {
+            collec.sub_type = 100;
+          }
+          else
+          {
+            collec.sub_type = 50;
+          }
+        }
         this.collecs.push(collec);
       }
     },
