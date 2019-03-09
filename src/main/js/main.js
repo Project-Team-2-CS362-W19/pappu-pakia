@@ -52,18 +52,27 @@ mit.main = function() {
   var canvas = document.querySelector('#game_main');
   var ctx = canvas.getContext('2d');
   
-  var W = canvas.width = ui.body.width();
-  var H = canvas.height = ui.body.height();
+  var W = 1000;//canvas.width = ui.body.width();
+  var H = 500;//canvas.height = ui.body.height();
+  canvas.width = ui.body.width();
+  canvas.height = ui.body.height();
 
   // Width x Height capped to 1000 x 500
   if (canvas.width > 1000) {
-    W = canvas.width = 1000;
+    canvas.width = 1000;
   }
   if (canvas.height > 500) {
-    H = canvas.height = 500;
+    canvas.height = 500;
   }
+  // Width x Height also capped to 750 x 375
+  //if (W != 750) {
+  //  W = 750;
+  //}
+  //if (H != 375) {
+  //  H = 375;
+  //}
 
-  // Resizing Width/Height
+  //Resizing Width/Height
   if (canvas.height < 500) {
     canvas.width = canvas.height * 1000/500;
   }
@@ -71,13 +80,43 @@ mit.main = function() {
     canvas.height = canvas.width * 500/1000;
   }
 
+  ctx.scale(canvas.width/1000, canvas.height/500);
+
+  //var W = canvas.width;
+  //var H = canvas.height;
+
   // BG Canvas
   var bg_canvas = document.querySelector('#game_bg');
   var bg_ctx = bg_canvas.getContext('2d');
 
   bg_canvas.width = canvas.width;
   bg_canvas.height = canvas.height;
+  bg_ctx.scale(canvas.width/1000, canvas.height/500);
 
+  //Resize ui when window resizes
+  mit.ui.resizeCanvas = function() {
+    canvas.height = ui.body.height();
+    if (canvas.height > 500) canvas.height = 500;
+    if (canvas.height < 300) canvas.height = 300;
+    canvas.width = canvas.height * 2;
+    if (canvas.width > ui.body.width()) canvas.width = ui.body.width();
+    if (canvas.width < 600) canvas.width = 600;
+    canvas.height = canvas.width * 1/2;
+    ctx.scale(canvas.width/1000, canvas.height/500);
+
+    bg_canvas.width = canvas.width;
+    bg_canvas.height = canvas.height;
+    bg_ctx.scale(bg_canvas.width/1000, bg_canvas.height/500);
+  
+    ui.start_screen.css('width', canvas.width + 'px');
+    ui.start_screen.css('height', canvas.height + 'px');
+
+  }
+  window.addEventListener('resize', function(e) {
+    mit.ui.resizeCanvas();
+  }, false);
+
+  // Music
   var music = document.getElementById("start");
   music.volume = 0.2;
   

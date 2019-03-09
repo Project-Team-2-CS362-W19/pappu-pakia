@@ -1,6 +1,5 @@
 var mit = require("../../../testSetup").mit;
 
-
 test('resetAllSpeed', () => {
   mit.Backgrounds.resetAllSpeed();
   expect(mit.Backgrounds.cloud_bg_move_speed).toBe(2);
