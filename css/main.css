@@ -1,4 +1,4 @@
-@font-face{ 
+@font-face{
 	font-family: 'Happy Sans';
 	src: url('../fonts/happy_sans-webfont.eot');
 	src: url('../fonts/happy_sans-webfont.eot?#iefix') format('embedded-opentype'),
@@ -222,14 +222,16 @@ canvas#game_bg {
 }
 
 .options {
-	height: 400px;
+	max-height: 400px;
+	height: 60vmin;
 	background-image: url(../img/stand.png);
 	background-position: bottom center;
 	width: 225px;
 	background-repeat: no-repeat;
+	background-size:contain;
 	position: absolute;
 	bottom: 0;
-	right: 50px;
+	right: 2%;
 }
 
 .options:before {
@@ -237,11 +239,11 @@ canvas#game_bg {
 	background-image: url(../img/dig.png);
 	background-repeat: no-repeat;
 	position: absolute;
-	width: 47px;
-	height: 49px;
+	width: 35%;
+	height: 7%;
 	bottom: -1px;
 	left: 50%;
-	margin-left: -27px;
+	margin-left: -15%;
 	z-index: -1;
 }
 
@@ -253,7 +255,7 @@ canvas#game_bg {
 
 .options ul li {
 	display: block;
-	font: 40px 'Happy Sans', cursive;
+	font: 5vmin 'Happy Sans', cursive;
 	text-align: center;
 	margin: 0 0 20px;
 }
@@ -265,20 +267,38 @@ canvas#game_bg {
 
 .options ul li:first-child {
 	background: url(../img/plank_top.png) no-repeat top center;
-	height: 70px;
-	line-height: 70px;
+	background-size:contain;
+	/*max-height: 120%;
+	height: auto;
+	width: auto;
+	/*line-height:auto; /*120%; /*70px;*/
+	/*height: 70px;
+	line-height: : 70px*/
+
 }
 
 .options ul li:nth-child(2) {
 	background: url(../img/plank_mid.png) no-repeat top center;
-	height: 63px;
-	line-height: 63px;
+	background-size: contain;
+	/*max-height: 120%;
+	height: auto;
+	width: auto;
+	/*object-fit: contain;
+	/*line-height: auto; /*120%; /*63px;*/
+	/*height: 63px;
+	line-height: : 63px*/
 }
 
 .options ul li:last-child {
 	background: url(../img/plank_bot.png) no-repeat top center;
-	height: 75px;
-	line-height: 75px;
+	background-size: contain;
+	/*max-height: 120%;
+	height: auto;
+	width: auto;
+	/*object-fit: contain;
+	/*line-height:auto; /*120%; /*75px;*/
+	/*height: 75px;
+	line-height: : 75px*/
 }
 
 .controls {
