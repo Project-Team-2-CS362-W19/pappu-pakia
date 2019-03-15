@@ -223,12 +223,13 @@ canvas#game_bg {
 
 .options {
 	max-height: 400px;
-	height: 60vmin;
+	min-height: 240px;
 	background-image: url(../img/stand.png);
 	background-position: bottom center;
-	width: 225px;
 	background-repeat: no-repeat;
 	background-size:contain;
+	height: 60vmin;
+	width: 225px;
 	position: absolute;
 	bottom: 0;
 	right: 2%;
@@ -249,15 +250,18 @@ canvas#game_bg {
 
 .options ul {
 	margin: 0;
-	padding: 50px 0 0;
 	list-style: none;
+	height:75%;
+	padding-top: 23%;
 }
 
 .options ul li {
 	display: block;
-	font: 5vmin 'Happy Sans', cursive;
+	font-family: 'Happy Sans', cursive;
+	font-size:calc(34px + 5vmin);
 	text-align: center;
-	margin: 0 0 20px;
+	margin-bottom: 8%;
+	padding-top:5%;
 }
 
 .options ul li a {
@@ -268,9 +272,11 @@ canvas#game_bg {
 .options ul li:first-child {
 	background: url(../img/plank_top.png) no-repeat top center;
 	background-size:contain;
-	/*max-height: 120%;
-	height: auto;
-	width: auto;
+	height: 28%;
+/*	max-height: 85px;
+	min-height: 25px;
+	height: 85%;
+	width: 45%;
 	/*line-height:auto; /*120%; /*70px;*/
 	/*height: 70px;
 	line-height: : 70px*/
@@ -280,9 +286,8 @@ canvas#game_bg {
 .options ul li:nth-child(2) {
 	background: url(../img/plank_mid.png) no-repeat top center;
 	background-size: contain;
-	/*max-height: 120%;
-	height: auto;
-	width: auto;
+	/*max-height: 120%;*/
+	height: 26%;
 	/*object-fit: contain;
 	/*line-height: auto; /*120%; /*63px;*/
 	/*height: 63px;
@@ -292,9 +297,8 @@ canvas#game_bg {
 .options ul li:last-child {
 	background: url(../img/plank_bot.png) no-repeat top center;
 	background-size: contain;
-	/*max-height: 120%;
-	height: auto;
-	width: auto;
+	/*max-height: 120%;*/
+	height: 30%;
 	/*object-fit: contain;
 	/*line-height:auto; /*120%; /*75px;*/
 	/*height: 75px;
