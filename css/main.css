@@ -1,4 +1,4 @@
-@font-face{ 
+@font-face{
 	font-family: 'Happy Sans';
 	src: url('../fonts/happy_sans-webfont.eot');
 	src: url('../fonts/happy_sans-webfont.eot?#iefix') format('embedded-opentype'),
@@ -198,7 +198,7 @@ canvas#game_bg {
 }
 
 #title {
-	font-size: 67px;
+	font-size: calc(34px + 6vmin);
 	line-height: 100px;
 	font-weight: normal;
 	color: #945430;
@@ -209,7 +209,8 @@ canvas#game_bg {
 }
 
 #credits, #high_score, #last_score {
-	font: 36px 'Happy Sans', cursive;
+	font: 0px 'Happy Sans', cursive;
+	font-size: (16px + 5vmin);
 	color: white;
 	padding: 0;
 	text-align: center;
@@ -222,40 +223,45 @@ canvas#game_bg {
 }
 
 .options {
-	height: 400px;
+	max-height: 400px;
+	min-height: 240px;
 	background-image: url(../img/stand.png);
 	background-position: bottom center;
-	width: 225px;
 	background-repeat: no-repeat;
+	background-size:contain;
+	height: 80%;
+	width: 22.5%;
 	position: absolute;
 	bottom: 0;
-	right: 50px;
+	right: 5%;
 }
 
 .options:before {
 	content: '';
-	background-image: url(../img/dig.png);
+	/*background-image: url(../img/dig.png);*/
 	background-repeat: no-repeat;
 	position: absolute;
-	width: 47px;
-	height: 49px;
+	width: 35%;
+	height: 7%;
 	bottom: -1px;
 	left: 50%;
-	margin-left: -27px;
+	margin-left: -15%;
 	z-index: -1;
 }
 
 .options ul {
 	margin: 0;
-	padding: 50px 0 0;
 	list-style: none;
+	height:75%;
+	padding-top: 23%;
 }
 
 .options ul li {
 	display: block;
-	font: 40px 'Happy Sans', cursive;
+	font-family: 'Happy Sans', cursive;
+	font-size:calc(15px + 3vmin);
 	text-align: center;
-	margin: 0 0 20px;
+	margin-bottom: 8%;
 }
 
 .options ul li a {
@@ -265,26 +271,28 @@ canvas#game_bg {
 
 .options ul li:first-child {
 	background: url(../img/plank_top.png) no-repeat top center;
-	height: 70px;
-	line-height: 70px;
+	background-size:contain;
+	height: 28%;
 }
 
 .options ul li:nth-child(2) {
 	background: url(../img/plank_mid.png) no-repeat top center;
-	height: 63px;
-	line-height: 63px;
+	background-size: contain;
+	height: 26%;
 }
 
 .options ul li:last-child {
 	background: url(../img/plank_bot.png) no-repeat top center;
-	height: 75px;
-	line-height: 75px;
+	background-size: contain;
+	height: 30%;
+	line-height: 1.65;
 }
 
 .controls {
-	width: 200px;
-	height: 48px;
+	width: 20%;
+	height: 10%;
 	background: url(../img/controls.png) no-repeat top center;
+	background-size: contain;
 	margin: 10px auto;
 	position: absolute;
 	top: 60%; left: 50%;
