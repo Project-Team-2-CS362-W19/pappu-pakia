@@ -198,7 +198,7 @@ canvas#game_bg {
 }
 
 #title {
-	font-size: 67px;
+	font-size: calc(34px + 6vmin);
 	line-height: 100px;
 	font-weight: normal;
 	color: #945430;
@@ -209,7 +209,8 @@ canvas#game_bg {
 }
 
 #credits, #high_score, #last_score {
-	font: 36px 'Happy Sans', cursive;
+	font: 0px 'Happy Sans', cursive;
+	font-size: (16px + 5vmin);
 	color: white;
 	padding: 0;
 	text-align: center;
@@ -228,16 +229,16 @@ canvas#game_bg {
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size:contain;
-	height: 60vmin;
-	width: 225px;
+	height: 80%;
+	width: 22.5%;
 	position: absolute;
 	bottom: 0;
-	right: 2%;
+	right: 5%;
 }
 
 .options:before {
 	content: '';
-	background-image: url(../img/dig.png);
+	/*background-image: url(../img/dig.png);*/
 	background-repeat: no-repeat;
 	position: absolute;
 	width: 35%;
@@ -288,9 +289,10 @@ canvas#game_bg {
 }
 
 .controls {
-	width: 200px;
-	height: 48px;
+	width: 20%;
+	height: 10%;
 	background: url(../img/controls.png) no-repeat top center;
+	background-size: contain;
 	margin: 10px auto;
 	position: absolute;
 	top: 60%; left: 50%;
